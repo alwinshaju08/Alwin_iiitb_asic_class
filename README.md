@@ -15,3 +15,4 @@ make
 sudo make install
 ```
 
+<img width="1048" alt="yosys" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f14cb7e5-a5ec-4b89-93c5-823df2f8dd9e">
