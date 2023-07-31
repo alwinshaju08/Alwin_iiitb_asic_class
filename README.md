@@ -160,6 +160,6 @@ docker run hello-world
 ```
 Below is the screenshot showing sucessful launch:
 
-<img width="1085" alt="openlane" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5f6964c6-7021-4660-98ac-cd274dae696e">
+<img width="1085" alt="openlane" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ec437280-7862-478b-bfbf-9da7d730892e">
 
 </details>
