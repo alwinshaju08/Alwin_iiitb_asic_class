@@ -29,8 +29,8 @@ $ sudo make install
      
 Below is the screenshot showing sucessful launch:
 
-<img width="1048" alt="yosys" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f14cb7e5-a5ec-4b89-93c5-823df2f8dd9e">
-</details>
+<img width="1085" alt="yosys" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/4048f403-62c7-4be1-9bc3-64d9d43e68ea">
+
 
 <details>  
 <summary> Iverilog </summary>
@@ -43,7 +43,7 @@ sudo apt-get install iverilog
 
 Below is the screenshot showing sucessful launch:
 
-<img width="1048" alt="iverilog" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/768ba79b-701b-4ec7-ba28-9b0aa8d4e851">
+<img width="1085" alt="iverilog" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e2e0ae1e-ef20-4b91-a21a-2d82768702f5">
 
 </details>
 
@@ -51,7 +51,7 @@ Below is the screenshot showing sucessful launch:
     
 <summary> Gtkwave </summary>
 
-I installed iverilog using the following command:
+I installed gtkwave using the following command:
 
 ```
 sudo apt-get install gtkwave
@@ -59,8 +59,7 @@ sudo apt-get install gtkwave
 
 Below is the screenshot showing sucessful launch:
 
-<img width="1048" alt="gtkwave" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/a554ecec-7b1c-472a-83c1-ccc20e9a35d5">
-
+<img width="1085" alt="gtkwave" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/0e6ac3aa-0886-4c4e-b553-a50466c08758">
 </details>
 
 <details>
@@ -81,7 +80,7 @@ sudo make install
 ```
 Below is the screenshot showing sucessful launch:
 
-<img width="1048" alt="ngspice" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ea53d1d2-ba18-474a-ae73-d8d2e1a1512f">
+<img width="1085" alt="ngspice" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/bcf2a79e-e185-40a2-b17d-1ed8b496c2d4">
 
 </details>
 
@@ -104,7 +103,7 @@ sudo apt-get install libncurses-dev
 ```
 Below is the screenshot showing sucessful launch:
 
-<img width="1064" alt="magic" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/253d3715-ff47-4b27-8621-fc0052cbe245">
+<img width="1085" alt="magic" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d66883ee-6262-4e1e-a4a9-186f96e0fb4d">
 
 </details>
 
@@ -126,8 +125,7 @@ make
 ```
 Below is the screenshot showing sucessful launch:
 
-<img width="1085" alt="sta" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/a5ec621c-62da-46ad-b207-67c65290e03e">
-
+<img width="1085" alt="opensta" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/594acfb4-e266-41c3-aba3-4bcd15ce946a">
 </details>
 
 <details>
