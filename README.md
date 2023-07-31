@@ -1,9 +1,9 @@
 # Alwin_iiitb_asic_class
 This github repository summarizes the progress made in the ASIC class. Quick links:
 
-[Day 0](#day-0)
+[Day 1](#day-1)
 
-## Day 0
+## Day 1
 <details>
  <summary> Summary </summary>
 	
