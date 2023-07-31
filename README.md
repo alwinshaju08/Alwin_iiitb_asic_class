@@ -1,5 +1,6 @@
 # Alwin_iiitb_asic_class
 This github repository summarizes the progress made in the ASIC class. Quick links:
+
 [Day 0](#day-0)
 
 ## Day 0
@@ -126,5 +127,41 @@ make
 Below is the screenshot showing sucessful launch:
 
 <img width="1085" alt="sta" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/a5ec621c-62da-46ad-b207-67c65290e03e">
+
+</details>
+
+<details>
+
+<summary> OpenLANE</summary>
+
+I installed and built OpenLANE (including the needed packages) using the following commands:
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+sudo docker run hello-world
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot 
+
+# After reboot
+docker run hello-world
+
+```
+Below is the screenshot showing sucessful launch:
+
+<img width="1085" alt="openlane" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5f6964c6-7021-4660-98ac-cd274dae696e">
 
 </details>
