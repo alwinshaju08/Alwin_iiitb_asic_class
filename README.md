@@ -3,6 +3,8 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day 1](#day-1)
 
+[Day 2](#day-2)
+
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
@@ -166,6 +168,11 @@ Below is the screenshot showing sucessful launch:
 <img width="1085" alt="openlane" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ec437280-7862-478b-bfbf-9da7d730892e">
 
 </details>
+
+## Day 2
+
+
+
 
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
