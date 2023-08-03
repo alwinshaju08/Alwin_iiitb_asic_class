@@ -3,6 +3,9 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day 1](#day-1)
 
+[Acknowledgement](#acknowledgement)
+
+[Reference](#reference)
 ## Day 1
 <details>
  <summary> Summary </summary>
