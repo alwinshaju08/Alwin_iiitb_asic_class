@@ -164,5 +164,18 @@ Below is the screenshot showing sucessful launch:
 
 </details>
 
-
+## Acknowledgement
+- Kunal Ghosh, VSD Corp. Pvt. Ltd.
+- Skywater Foundry
+- Chatgtp
+- Kanish R,Colleague,IIIT B
+- DantuNandini,Senior,IIIT B
+- Mariam Rakka
+- Nanditha Rao, Professor, IIITB 
+- Madhav Rao, Professor, IIITB
+- Manikandan,Professor,IIITB
+  
 ## Reference 
+
+- https://github.com/YosysHQ/yosys.git
+- https://github.com/The-OpenROAD-Project/OpenSTA.git
