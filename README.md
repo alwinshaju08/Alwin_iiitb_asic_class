@@ -1,22 +1,14 @@
 # Alwin_iiitb_asic_class
 This github repository summarizes the progress made in the ASIC class. Quick links:
 
-[Day-1 Installation](#day-1)
+[Day-1](#day-1)
 
-[Day-2- Introduction to Verilog RTL design and Synthesis](#day-2--Introduction-to-Verilog-RTL-design-and-Synthesis)
-
-[2.1 Introduction to open source simulator iverilog and gtkwave](#22-Introduction-to-open-source-simulator-iverilog-and-gtkwave)
-
-[2.1.1 Lab examples using iverilog and gtkwave](#221-Lab-examples-using-iverilog-and-gtkwave)
-
-[2.2 Introduction to Yosys synthesizer](#23-Introduction-to-Yosys-synthesizer)
-
-[2.2.1 Labs on Yosys introduction](#231-Labs-on-Yosys-introduction)
+[Day-2](#day-2)
 
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
-## Day-1 Installation
+## Day-1
 <details>
  <summary> Summary </summary>
 	
@@ -177,7 +169,10 @@ Below is the screenshot showing sucessful launch:
 
 </details>
 
-# Day-2- Introduction to Verilog RTL design and Synthesis
+# Day-2
+<details>
+<summary>Introduction to Verilog RTL design and Synthesis</summary>
+
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
 
 **Sample RTL design outline:**
@@ -197,10 +192,14 @@ Below is the screenshot showing sucessful launch:
 **Simulator**: Simulator is the tool used for this process. It looks for changes on input signals to evaluate outputs. No change in output if there is no change in input signals
 Here is the flow of frondend design:
 ![Capture1](https://user-images.githubusercontent.com/104454253/166088866-80a4e792-7db7-4bf2-b3b5-b4b9b92452a8.JPG)
-## 2.1 Introduction to open source simulator iverilog and gtkwave
+
+<details>
+ <summary> Introduction to open source simulator iverilog and gtkwave </summary>
+	
 **iverilog**: iverilog stands for Icarus Verilog. Icarus Verilog is an implementation of the Verilog hardware description language. It supports the 1995, 2001 and 2005 versions of the standard, portions of SystemVerilog, and some extensions.
 
 **Gtkwave**: GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing. 
+</details>
 
 ### 2.1.1 Lab examples using iverilog and gtkwave
 
@@ -246,7 +245,11 @@ Here is the code :<br />
 	always #10 i0 = ~i0;
 	always #55 i1 = ~i1;
 	endmodule
-## 2.2 Introduction to Yosys synthesizer
+
+</details>
+
+<details>
+ <summary> Introduction to Yosys synthesizer </summary>
 
 **Synthesis**: Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates.
 
@@ -359,6 +362,7 @@ yosys> write_verilog -noattr good_mux_netlist.v
 yosys> !vim good_mux_netlist.v 
 
 ```
+</details>
 
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
