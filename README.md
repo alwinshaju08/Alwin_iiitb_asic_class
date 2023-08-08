@@ -257,6 +257,7 @@ Synthesis takes place in multiple steps:
 
 **Synthesizer**: It is a tool we use to convert out RTL design code to netlist. Yosys is the tool I've used in this workshop.
 Here is the flow of above processess.
+
 ![rtl-netlist](https://user-images.githubusercontent.com/104454253/166097298-41d913ee-640d-4e1e-9e70-5bf427f35ef4.JPG)
 
 **Yosys**:Yosys is a framework for RTL synthesis and more. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Yosys is the core component of most our implementation and verification flows.
@@ -316,9 +317,13 @@ Below is an illustration of Synthesis.
 
 ### 2.2.1 Labs on Yosys introduction
 Invoking Yosys:
+
 ![yosys](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/eb5549da-64f2-4d68-8979-57a2143262ce)
+
 Snippet below illustrates reading .lib, design and choosing the module to synthesize:
+
 ![Screenshot from 2023-08-08 10-21-40](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/26ff7142-0f8f-4cd5-9849-c036b197bbd4)
+
 **Generating Netlist**: The logic of good_mux will be realizable using gates in the sky130_fd_sc_hd__tt_025C_1v80.lib file
 
 ![Screenshot from 2023-08-08 10-22-51](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c7694b33-1b54-493b-b6bc-85d040e35d3a)
