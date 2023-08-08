@@ -353,10 +353,10 @@ yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> show
 
 yosys> write_verilog good_mux_netlist.v 
-yosys> !gvim good_mux_netlist.v 
+yosys> !vim good_mux_netlist.v 
 
 yosys> write_verilog -noattr good_mux_netlist.v
-yosys> !gvim good_mux_netlist.v 
+yosys> !vim good_mux_netlist.v 
 
 ```
 
