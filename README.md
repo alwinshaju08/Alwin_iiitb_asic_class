@@ -1,7 +1,7 @@
 # Alwin_iiitb_asic_class
 This github repository summarizes the progress made in the ASIC class. Quick links:
 
-[Day 1](#day-1)
+[Day-1](#day-1)
 
 [Day-2- Introduction to Verilog RTL design and Synthesis](#day-2--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
@@ -16,7 +16,7 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
-## Day 1
+## Day-1
 <details>
  <summary> Summary </summary>
 	
