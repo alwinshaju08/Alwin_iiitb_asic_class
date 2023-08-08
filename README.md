@@ -3,7 +3,7 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day 1](#day-1)
 
-[Day 2](#day-2)
+[Day-2- Introduction to Verilog RTL design and Synthesis](#day-2--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
 [Acknowledgement](#acknowledgement)
 
@@ -169,9 +169,34 @@ Below is the screenshot showing sucessful launch:
 
 </details>
 
-## Day 2
+# Day-2- Introduction to Verilog RTL design and Synthesis
+**RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
 
+**Sample RTL design outline:**
 
+	module module_name (port list);
+		//declarations;
+		//initializations;
+		//continuos concurrent assigments;
+		//procedural blocks;
+	endmodule
+
+**Test Bench**: Using Verilog we can write a test bench to apply stimulus to the RTL design and verify the results of the design by instantiating design with in test bench. Up-front verification becomes very important as design size increases in size and complexity while any project progresses. This ensures simulation results matches with post synthesis results. A test bench can have two parts, the one generates input signals for the model to be tested while the other part checks the output signals from the design under test. It can be represented as follows.
+![Capture2](https://user-images.githubusercontent.com/104454253/166088950-634be5a4-7d5a-4b43-9990-711f8f660aaf.JPG)
+
+**Simulation**: RTL design is checked for adherence to its design specification using simulation by giving sample inputs. This helps finding and fixing bugs in the RTL design in the early stages of design development. 
+
+**Simulator**: Simulator is the tool used for this process. It looks for changes on input signals to evaluate outputs. No change in output if there is no change in input signals
+Here is the flow of frondend design:
+![Capture1](https://user-images.githubusercontent.com/104454253/166088866-80a4e792-7db7-4bf2-b3b5-b4b9b92452a8.JPG)
+## 2.1 Introduction to open source simulator iverilog and gtkwave
+**iverilog**: iverilog stands for Icarus Verilog. Icarus Verilog is an implementation of the Verilog hardware description language. It supports the 1995, 2001 and 2005 versions of the standard, portions of SystemVerilog, and some extensions.
+
+**Gtkwave**: GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing. 
+
+### 2.1.1 Lab examples using iverilog and gtkwave
+
+We were introducted to Linux operating system and were made aware of the basic commands. Using **git clone** command we've cloned library files like standard cell library, primitives which are used for synthesis and few verilog codes for practice.
 
 
 ## Acknowledgement
