@@ -339,6 +339,21 @@ Below is the snippet showing the synthesis results and synthesized circuit for m
 
 ![Screenshot from 2023-08-08 10-44-30](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/53a60bf5-6834-4ec2-875a-40440bf0f428)
 
+```
+$ yosys
+yosys> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+yosys> read_verilog good_mux.v 
+yosys> synth -top good_mux 
+yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+yosys> show
+
+yosys> write_verilog good_mux_netlist.v 
+yosys> !gvim good_mux_netlist.v 
+
+yosys> write_verilog -noattr good_mux_netlist.v
+yosys> !gvim good_mux_netlist.v 
+
+```
 
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
