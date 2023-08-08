@@ -197,7 +197,9 @@ Here is the flow of frondend design:
 ### 2.1.1 Lab examples using iverilog and gtkwave
 
 We were introducted to Linux operating system and were made aware of the basic commands. Using **git clone** command we've cloned library files like standard cell library, primitives which are used for synthesis and few verilog codes for practice.
-
+![WhatsApp Image 2023-08-08 at 7 26 11 AM(2)](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/b256013c-440a-494a-af13-8b6ee89aa416)
+![WhatsApp Image 2023-08-08 at 7 26 11 AM(1)](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/45a367ca-2db5-4381-848f-66f6e36bd95e)
+![WhatsApp Image 2023-08-08 at 7 26 11 AM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/dde88c97-efef-4178-9c93-15623953efe8)
 
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
