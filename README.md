@@ -4,7 +4,10 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 [Day 1](#day-1)
 
 [Day-2- Introduction to Verilog RTL design and Synthesis](#day-2--Introduction-to-Verilog-RTL-design-and-Synthesis)
-
+[2.1 Introduction to open source simulator iverilog and gtkwave](#22-Introduction-to-open-source-simulator-iverilog-and-gtkwave)
+[2.1.1 Lab examples using iverilog and gtkwave](#221-Lab-examples-using-iverilog-and-gtkwave)
+[2.2 Introduction to Yosys synthesizer](#23-Introduction-to-Yosys-synthesizer)
+[2.2.1 Labs on Yosys introduction](#231-Labs-on-Yosys-introduction)
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
