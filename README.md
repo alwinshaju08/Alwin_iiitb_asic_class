@@ -201,7 +201,7 @@ Here is the flow of frondend design:
 **Gtkwave**: GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing. 
 </details>
 
-### 2.1.1 Lab examples using iverilog and gtkwave
+### Lab examples using iverilog and gtkwave
 
 We were introducted to Linux operating system and were made aware of the basic commands. Using **git clone** command we've cloned library files like standard cell library, primitives which are used for synthesis and few verilog codes for practice.
 ![WhatsApp Image 2023-08-08 at 7 26 11 AM(2)](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/b256013c-440a-494a-af13-8b6ee89aa416)
@@ -318,7 +318,7 @@ Below is an illustration of Synthesis.
 
 ![Screenshot (44)](https://user-images.githubusercontent.com/104454253/166099264-e3842e91-1a27-44ae-830c-0757dc5b1a5e.png)
 
-### 2.2.1 Labs on Yosys introduction
+### Labs on Yosys introduction
 Invoking Yosys:
 
 ![yosys](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/eb5549da-64f2-4d68-8979-57a2143262ce)
