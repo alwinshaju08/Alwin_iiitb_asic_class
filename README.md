@@ -374,6 +374,7 @@ yosys> !vim good_mux_netlist.v
 <summary>Introduction to timing .libs</summary>
 
  </details>
+ 
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
 - Skywater Foundry
