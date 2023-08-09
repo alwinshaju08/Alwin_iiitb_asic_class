@@ -562,7 +562,7 @@ We control this synthesis using **synth -top <module_name>** command
 <details>
 	<summary>Various Flop coding styles and optimization</summary>
 	
-**Why Flops and Flop coding styles part1**
+**Why Flops and Flop coding styles**
 
 In this session, the discussion was about how to code various types of flops and various styles of coding a flop.
 
