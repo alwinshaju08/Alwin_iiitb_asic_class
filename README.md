@@ -556,9 +556,12 @@ Another reason to generate module level synthesis and then stictch them together
 We control this synthesis using **synth -top <module_name>** command
 
 ![lab52](https://user-images.githubusercontent.com/104454253/166113791-5c245c1c-727a-4f15-aaec-9fef1b817aec.JPG)
+
  </details>
+ 
 <details>
 	<summary>Various Flop coding styles and optimization</summary>
+	
 **Why Flops and Flop coding styles part1**
 
 In this session, the discussion was about how to code various types of flops and various styles of coding a flop.
