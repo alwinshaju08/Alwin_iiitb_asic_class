@@ -3,7 +3,10 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day-0](#day-0)
 
-[Day-1](#day-1)
+[Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
+
+[Day-2-Timing libs,hierarchical,flat synthesis,efficient flop coding styles](#Day-2-Timing-libs,hierarchical,flat synthesis, efficient-flop coding styles)
+[Day-3](#day-3)
 
 [Acknowledgement](#acknowledgement)
 
@@ -169,7 +172,7 @@ Below is the screenshot showing sucessful launch:
 
 </details>
 
-# Day-1
+# Day-1-Introduction to Verilog RTL design and Synthesis
 <details>
 <summary>Introduction to Verilog RTL design and Synthesis</summary>
 
@@ -364,6 +367,11 @@ yosys> !vim good_mux_netlist.v
 ```
 </details>
 
+# Day-2-Timing libs, hierarchical, flat synthesis, efficient flop coding styles
+<details>
+<summary>Introduction to timing .libs</summary>
+
+ 
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
 - Skywater Foundry
