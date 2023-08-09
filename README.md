@@ -5,7 +5,8 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
-[Day-2-Timing libs,hierarchical,flat synthesis,efficient flop coding styles](#Day-2-Timing-libs,hierarchical,flat synthesis, efficient-flop coding styles)
+[Day-2-Timing libs,hierarchical,flat synthesis,efficient flop coding styles](#Day-2-Timing-libs-hierarchical-flat-synthesis-efficient-flop-coding-styles)
+
 [Day-3](#day-3)
 
 [Acknowledgement](#acknowledgement)
