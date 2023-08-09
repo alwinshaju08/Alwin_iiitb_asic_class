@@ -12,6 +12,7 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
+
 ## Day-0
 <details>
  <summary> Summary </summary>
@@ -372,7 +373,7 @@ yosys> !vim good_mux_netlist.v
 <details>
 <summary>Introduction to timing .libs</summary>
 
- 
+ </details>
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
 - Skywater Foundry
