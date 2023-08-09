@@ -578,7 +578,19 @@ To curb this drawback, we are going for flops to store the data from the cominat
 
 **d-flipflop with asynchronous reset**- Here the output **q** goes low whenever reset is high and will not wait for the clock's posedge, i.e irrespective of clock, the output is changed to low.
 
+![telegram-cloud-photo-size-5-6314223892675276834-y](https://user-images.githubusercontent.com/110079648/183966438-05a31060-6a35-44dc-8717-1a0f76fe4c3e.jpg)
+ 
+	 module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+		always @ (posedge clk , posedge async_reset)
+		begin
+			if(async_reset)
+				q <= 1'b0;
+			else	
+				q <= d;
+		end
+	endmodule
 
+**Simulation**:
 
  
 </details>
