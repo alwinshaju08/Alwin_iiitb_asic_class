@@ -974,6 +974,52 @@ Here flop will not be inferred as the output is always high. <br />
  
 </details>
 
+<details>
+<summary> Sequential optimisation of unused outputs </summary>
+
+**Example1**
+
+		module counter_opt (input clk , input reset , output q);
+		reg [2:0] count;
+		assign q = count[0];
+		always @(posedge clk ,posedge reset)
+		begin
+			if(reset)
+				count <= 3'b000;
+			else
+				count <= count + 1;
+		end
+		endmodule
+
+**Synthesis**
+
+![Screenshot from 2023-08-10 17-22-33](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/bb78deec-c9a6-4abd-8ad8-193bf6ce2389)
+
+![Screenshot from 2023-08-10 17-22-58](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/42617423-b018-455e-b059-f49d9e807a0f)
+
+**Updated counter logic-** 
+
+	module counter_opt (input clk , input reset , output q);
+		reg [2:0] count;
+		assign q = {count[2:0]==3'b100};
+		always @(posedge clk ,posedge reset)
+		begin
+		if(reset)
+			count <= 3'b000;
+		else
+			count <= count + 1;
+		end
+	endmodule
+
+**Synthesis**
+
+All the other blocks in synthesizer are for incrementing the counter but the output is only from the three input NOR gate.
+
+![Screenshot from 2023-08-10 17-25-40](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/a4f9fb95-809c-41a9-b375-c6bc5d5e17a6)
+
+![Screenshot from 2023-08-10 17-27-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5e8879d9-ea18-4b8d-94ef-2984f9faf9a2)
+ 
+</details>
  
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
