@@ -679,11 +679,28 @@ This lab session deals with some automatic and interesting optimisations of the 
 		assign y = a * 2;
 	endmodule
 
-![telegram-cloud-photo-size-5-6314223892675276908-y](https://user-images.githubusercontent.com/110079648/183971707-8f04b9d0-2ef9-4160-ad44-12981cc97add.jpg)
-
 **Synthesized circuit**:
 
+![Screenshot from 2023-08-10 13-06-07](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/1c3324c9-7f38-4e5c-a27c-3f35b54e6c93)
 
+When it comes to multiplying with powers of 2, it just needs shifting as shown in the below image:
+
+![telegram-cloud-photo-size-5-6314223892675276908-y](https://user-images.githubusercontent.com/110079648/183971707-8f04b9d0-2ef9-4160-ad44-12981cc97add.jpg)
+
+**Netlist for the above schematic**
+
+![Screenshot from 2023-08-10 13-09-41](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e80a2c59-5d34-4951-8d25-d5f0108b2daf)
+
+Special case of multiplying **a** with **9**. The result is shown in the below image:
+
+
+The schematic for the same is shown below:
+
+![Screenshot from 2023-08-10 13-12-25](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d24c06b6-0250-4ed4-b2fb-2ea7b7b08dcc)
+
+**Netlist for the above schematic**
+
+![Screenshot from 2023-08-10 13-13-57](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/292f924c-e05c-42eb-b987-459b8c838f2c)
  
 </details>
  
