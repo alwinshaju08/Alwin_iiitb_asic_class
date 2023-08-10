@@ -670,6 +670,7 @@ To curb this drawback, we are going for flops to store the data from the cominat
 </details>
 
 <details>
+	
 <summary> Interesting optimisations </summary>
 
 This lab session deals with some automatic and interesting optimisations of the circuits based on logic. In the below example, multiplying a number with 2 doesn't need any additional hardeware and only needs connecting the bits from **a** to **y** and grounding the LSB bit of y is enough and the same is realized by Yosys.
