@@ -418,7 +418,7 @@ Below image is the delay order for the different flavor of gates.
 
 This is the schematic as per the connections in the above module.
 
-![submodel](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c7b0c701-911c-4882-8576-6580a7e56324)
+![submodel](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/80bb4a1b-4fcd-42c9-8e8b-72ee65a625c1)
 
 However, the yosys synthesizer generates the following schematic instead of the above one and with in the submodules, the connections are made
 
@@ -578,8 +578,7 @@ To curb this drawback, we are going for flops to store the data from the cominat
 
 **d-flipflop with asynchronous reset**- Here the output **q** goes low whenever reset is high and will not wait for the clock's posedge, i.e irrespective of clock, the output is changed to low.
 
-![asyn](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ff24dcd0-792a-436d-b314-b19a2019acf5)
-
+![asyn](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ff524bd6-0952-48b5-9e05-4992d13cb62b)
  
 	 module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
 		always @ (posedge clk , posedge async_reset)
@@ -646,7 +645,7 @@ To curb this drawback, we are going for flops to store the data from the cominat
 
 **d-flipflop with synchronous and asynchronbous reset**- Here the output **q** goes low whenever asynchronous reset is high where output doesn't depend on clock and also when synchronous reset is high and posedge of clock occurs.
 
-![asynsyn](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5dad4c06-5efc-4be8-a72e-c848dfefcab7)
+![asynsyn](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/3abae8d4-0874-40a5-9e51-3515e30afdd0)
 
 	module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
 		always @ (posedge clk , posedge async_reset)
@@ -686,8 +685,7 @@ This lab session deals with some automatic and interesting optimisations of the 
 
 When it comes to multiplying with powers of 2, it just needs shifting as shown in the below image:
 
-![mul2](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/fda89217-81e1-4cbc-b485-54f22918e05c)
-
+![mul2](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/fe739548-f9d5-43b3-92a8-67d87c8f5191)
 
 **Netlist for the above schematic**
 
@@ -695,7 +693,7 @@ When it comes to multiplying with powers of 2, it just needs shifting as shown i
 
 Special case of multiplying **a** with **9**. The result is shown in the below image:
 
-![mul9](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/308962bd-86af-4989-9d73-7a4f033aff11)
+![mul9](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/0867ed5b-9fb1-44ef-93c1-d48ebbc984bb)
 
 The schematic for the same is shown below:
 
