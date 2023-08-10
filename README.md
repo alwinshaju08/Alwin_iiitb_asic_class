@@ -767,8 +767,6 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 
  **Example- 5**
 
-
-
 	module sub_module(input a , input b , output y);
 		assign y = a & b;
 	endmodule
@@ -781,7 +779,7 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 		sub_module U4 (.a(n3), .b(n1) , .y(y));
 	endmodule
 
-
+![Screenshot from 2023-08-10 16-33-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f9e8f641-8927-4a5c-90be-eb8cc740d5df)
 
 **Example-6**
 
@@ -804,6 +802,7 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 		endmodule
 
 
+![Screenshot from 2023-08-10 16-34-39](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/7f74441f-9d3f-44c1-8946-dcf51018ba87)
 
  
 </details>
