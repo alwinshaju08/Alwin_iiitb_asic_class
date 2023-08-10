@@ -806,6 +806,174 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 
  
 </details>
+
+<details>
+<summary>Sequential Logic Optimization with examples
+</summary>
+
+Below are the various techniques used for sequential logic optimisations:<br />
+-Basic
+  - Sequential contant propagation
+- Advanced
+  - State optimisation
+  - Retiming
+  - Sequential Logic Cloning (Floor Plan Aware Synthesis)
+ 
+#### 4.2.1 Basic
+
+**Sequential contant propagation**- Here only the first logic can be optimized as the output of flop is always zero. However for the second flop, the output changes continuously, therefor it cannot be used for contant propagation.
+
+![telegram-cloud-photo-size-5-6314223892675276922-y](https://user-images.githubusercontent.com/110079648/183978891-36f71300-ce08-4447-912d-ff23b5a9259a.jpg)
+
+#### Advanced
+**State Optimisation**: This is optimisation of unused state. Using this technique we can come up with most optimised state machine.
+
+**Cloning**: This is done when performing PHYSICAL AWARE SYNTHESIS. Lets consider a flop A which is connected to flop B and flop C through a combination logic. If B and C are placed far from A in the flooerplan, there is a routing path delay. To avoid this, we connect A to two intermediate flops and then from these flops the output is sent to B and C thereby decreasing the delay. This process is called cloning since we are generating two new flops with same functionality as A.
+
+**Retiming**: Retiming is a powerful sequential optimization technique used to move registers across the combinational logic or to optimize the number of registers to improve performance via power-delay trade-off, without changing the input-output behavior of the circuit. 
+
+**Example-1**<br />
+Here flop will be inferred as the output is not constant. <br />
+
+	module dff_const1(input clk, input reset, output reg q);
+		always @(posedge clk, posedge reset)
+		begin
+			if(reset)
+				q <= 1'b0;
+			else
+				q <= 1'b1;
+		end
+	endmodule
+
+**Simulation**
+
+![Screenshot from 2023-08-10 16-42-20](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c6683476-a75f-4ffe-b30b-b7b906c468fa)
+
+**Synthesis**<br />
+In the synthesis report, we'll see that a Dflop was inferred in this example.
+
+![Screenshot from 2023-08-10 17-00-46](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ce467143-864e-41cf-b226-acc72f0e69b9)
+
+![Screenshot from 2023-08-10 16-56-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d8df7da0-ede8-4b49-9f40-38d06efbd448)
+
+
+**Example-2**<br />
+Here flop will not be inferred as the output is always high. <br />
+
+	module dff_const2(input clk, input reset, output reg q);
+		always @(posedge clk, posedge reset)
+		begin
+			if(reset)
+				q <= 1'b1;
+			else
+				q <= 1'b1;
+		end
+	endmodule
+
+
+
+**Simulation**
+
+![Screenshot from 2023-08-10 16-43-58](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/0b3c3b54-ab1e-44ca-8b4a-d07320e7eb37)
+
+**Synthesis**
+
+![Screenshot from 2023-08-10 17-03-13](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/70da170d-b659-4d34-b0a0-a4db84a3f752)
+
+![Screenshot from 2023-08-10 17-04-23](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/66d01bb4-e50a-49e6-acaf-a7cf6917cec1)
+
+**Example-3**
+
+		module dff_const3(input clk, input reset, output reg q);
+		reg q1;
+
+		always @(posedge clk, posedge reset)
+		begin
+			if(reset)
+			begin
+				q <= 1'b1;
+				q1 <= 1'b0;
+			end
+			else
+			begin
+				q1 <= 1'b1;
+				q <= q1;
+			end
+		end
+		endmodule
+
+
+**Simulation***
+
+![Screenshot from 2023-08-10 16-44-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ab33f9ff-b456-4358-8e1d-999d7cdfe025)
+
+**Synthesis**
+
+![Screenshot from 2023-08-10 17-05-10](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/79e72a0f-db7e-4edf-9695-81d66228061b)
+
+![Screenshot from 2023-08-10 17-07-47](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/8dfff9cb-8107-4aa3-b892-c59072ee33db)
+
+**Example4**
+
+		module dff_const4(input clk, input reset, output reg q);
+		reg q1;
+
+		always @(posedge clk, posedge reset)
+		begin
+			if(reset)
+			begin
+				q <= 1'b1;
+				q1 <= 1'b1;
+			end
+		else
+			begin
+				q1 <= 1'b1;
+				q <= q1;
+			end
+		end
+		endmodule
+
+**Simulation***
+
+![Screenshot from 2023-08-10 16-45-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c5bedf32-0edf-4d3c-a1d3-968c60e39402)
+
+**Synthesis**
+
+![Screenshot from 2023-08-10 17-09-12](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/8647320e-058f-413c-b625-91bfc64378a2)
+
+![Screenshot from 2023-08-10 17-09-41](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ed25d6a2-e512-482b-9efc-44eb249e8d59)
+
+**Example5**
+
+		module dff_const5(input clk, input reset, output reg q);
+		reg q1;
+		always @(posedge clk, posedge reset)
+			begin
+				if(reset)
+				begin
+					q <= 1'b0;
+					q1 <= 1'b0;
+				end
+			else
+				begin
+					q1 <= 1'b1;
+					q <= q1;
+				end
+			end
+		endmodule
+
+**Simulation***
+
+![Screenshot from 2023-08-10 16-45-53](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/05819ff1-766e-47ba-bcc4-b6db22d93455)
+
+**Synthesis**
+
+![Screenshot from 2023-08-10 17-10-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/2edf31b0-181b-4db2-b2e4-9861ec1d7cc3)
+
+![Screenshot from 2023-08-10 17-11-05](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/41275734-79ad-4782-8a67-eb0527499a2a)
+ 
+</details>
+
  
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
