@@ -731,7 +731,7 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 
 **Example-1**
 
-![62695d29-f76d-426c-ab99-af6fbb2abda0](https://user-images.githubusercontent.com/104454253/166292324-f3243d68-55c1-4829-a836-8177edc79613.jpg)
+![IMG_1861](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d8df4dab-f4a6-4885-8dd9-5561c6450b93)
 
 	module opt_check (input a , input b , output y);
 		assign y = a?b:0;
@@ -823,7 +823,7 @@ Below are the various techniques used for sequential logic optimisations:<br />
 
 **Sequential contant propagation**- Here only the first logic can be optimized as the output of flop is always zero. However for the second flop, the output changes continuously, therefor it cannot be used for contant propagation.
 
-![telegram-cloud-photo-size-5-6314223892675276922-y](https://user-images.githubusercontent.com/110079648/183978891-36f71300-ce08-4447-912d-ff23b5a9259a.jpg)
+![IMG_1862](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/64d09728-6e85-49b9-a8c6-4fca7b650cb9)
 
 #### Advanced
 **State Optimisation**: This is optimisation of unused state. Using this technique we can come up with most optimised state machine.
