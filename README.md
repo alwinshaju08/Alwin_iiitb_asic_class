@@ -1,19 +1,19 @@
 # Alwin_iiitb_asic_class
 This github repository summarizes the progress made in the ASIC class. Quick links:
 
-[Day-0](#day-0)
+[Day-0-Installation](#day-0-Installation)
 
 [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
 [Day-2-Timing libs,hierarchical,flat synthesis,efficient flop coding styles](#Day-2-Timing-libs-hierarchical-flat-synthesis-efficient-flop-coding-styles)
 
-[Day-3](#day-3)
+[Day-3-Combinational and sequential optmizations](#day-3-Combinational-and-sequential-optmizations)
 
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
 
-## Day-0
+## Day-0-Installation
 <details>
  <summary> Summary </summary>
 	
@@ -702,6 +702,109 @@ The schematic for the same is shown below:
 **Netlist for the above schematic**
 
 ![Screenshot from 2023-08-10 13-13-57](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/292f924c-e05c-42eb-b987-459b8c838f2c)
+ 
+</details>
+
+# Day3-Combinational and sequential optmizations
+<details>
+<summary> Combinational logic optimization with examples </summary>
+
+Optimising the combinational logic circuit is squeezing the logic to get the most optimized digital design so that the circuit finally is area and power efficient. This is achieved by the synthesis tool using various techniques and gives us the most optimized circuit.
+
+**Techniques for optimization**:
+- Constant propagation which is Direct optimizxation technique
+- Boolean logic optimization using K-map or Quine McKluskey
+
+Here is an example for **Constant Propagation**
+
+![optimizations1](https://user-images.githubusercontent.com/104454253/166127772-9ff3dc8e-c5e2-4621-8070-d300df31667e.JPG)
+
+In the above example, if we considor the trasnsistor level circuit of output Y, it has 6 MOS trasistors and when it comes to invertor, only 2 transistors will be sufficient. This is achieved by making A as contstant and propagating the same to output.
+
+Example for **Boolean logic optimization**:
+
+Let's consider an example concurrent statement **assign y=a?(b?c:(c?a:0)):(!c)**
+
+The above expression is using a ternary operator which realizes a series of multiplexers, however, when we write the boolean expression at outputs of each mux and simplify them further using boolean reduction techniques, the outout **y** turns out be just **~(a^c)**
+
+Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
+
+**Example-1**
+
+![62695d29-f76d-426c-ab99-af6fbb2abda0](https://user-images.githubusercontent.com/104454253/166292324-f3243d68-55c1-4829-a836-8177edc79613.jpg)
+
+	module opt_check (input a , input b , output y);
+		assign y = a?b:0;
+	endmodule
+
+**Optimized circuit**
+
+![Screenshot from 2023-08-10 15-37-40](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c5d4e651-6e9e-40a2-8895-e92a0796e619)
+
+**Example-2**
+
+	module opt_check2 (input a , input b , output y);
+		assign y = a?1:b;
+	endmodule
+
+![Screenshot from 2023-08-10 15-38-23](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c038deb1-4e4c-48e7-a520-12e4275ec5c4)
+
+ **Example-3**
+
+	module opt_check3 (input a , input b, input c , output y);
+		assign y = a?(c?b:0):0;
+	endmodule
+
+![Screenshot from 2023-08-10 15-39-00](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f6729e2a-5503-4e6f-bd26-4da43ae99ce5)
+
+ **Example-4**
+
+	module opt_check4 (input a , input b , input c , output y);
+		assign y = a?(b?(a & c ):c):(!c);
+	endmodule
+
+![Screenshot from 2023-08-10 15-39-24](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/a8016b15-cc64-42c7-91f0-69c3a4a85751)
+
+ **Example- 5**
+
+
+
+	module sub_module(input a , input b , output y);
+		assign y = a & b;
+	endmodule
+
+	module multiple_module_opt2(input a , input b , input c , input d , output y);
+		wire n1,n2,n3;
+		sub_module U1 (.a(a) , .b(1'b0) , .y(n1));
+		sub_module U2 (.a(b), .b(c) , .y(n2));
+		sub_module U3 (.a(n2), .b(d) , .y(n3));
+		sub_module U4 (.a(n3), .b(n1) , .y(y));
+	endmodule
+
+
+
+**Example-6**
+
+
+		module sub_module1(input a , input b , output y);
+		 assign y = a & b;
+		endmodule
+
+		module sub_module2(input a , input b , output y);
+		 assign y = a^b;
+		endmodule
+
+		module multiple_module_opt(input a , input b , input c , input d , output y);
+		wire n1,n2,n3;
+		sub_module1 U1 (.a(a) , .b(1'b1) , .y(n1));
+		sub_module2 U2 (.a(n1), .b(1'b0) , .y(n2));
+		sub_module2 U3 (.a(b), .b(d) , .y(n3));
+
+		assign y = c | (b & n1); 
+		endmodule
+
+
+
  
 </details>
  
