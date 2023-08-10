@@ -430,7 +430,7 @@ yosys> synth -top multiple_modules
 yosys> show multiple_modules 
 
 ```
-image-- 
+![Screenshot from 2023-08-10 06-14-30](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/6a5fc933-a6b3-4b11-a19d-fcad8a5ccb43)
 
 The synthesizer considers the module hierarcy and does the mapping accordting to instantiation. Here is the hierarchical netlist code for the  multiple_modules:
 
@@ -591,6 +591,97 @@ To curb this drawback, we are going for flops to store the data from the cominat
 	endmodule
 
 **Simulation**:
+
+![Screenshot from 2023-08-10 06-18-49](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e5f28498-b4dd-4be5-8837-4c732351ef7c)
+
+**Synthesized circuit**:
+
+![Screenshot from 2023-08-10 06-24-31](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/cca2575d-9f9e-4f81-bf1d-2230e5024e42)
+
+**d-flipflop with asynchronous set**- Here the output **q** goes high whenever set is high and will not wait for the clock's posedge, i.e irrespective of clock, the output is changed to high.
+ 
+
+	module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+		always @ (posedge clk , posedge async_set)
+		begin
+			if(async_set)
+				q <= 1'b1;
+			else
+				q <= d;
+		end
+	endmodule
+
+**Simulation**:
+
+![Screenshot from 2023-08-10 06-29-39](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/bc503e0b-7e9b-466c-b7cb-1d806f6baccd)
+
+**Synthesized circuit**:
+
+
+![Screenshot from 2023-08-10 06-35-34](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/417c745c-5278-441e-b70b-6fc33861d70d)
+
+
+**d-flipflop with synchronous reset**- Here the output **q** goes low whenever reset is high and at the positive edge of the clock. Here the reset of the output depends on the clock.
+
+
+
+	module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+		always @ (posedge clk )
+		begin
+			if (sync_reset)
+				q <= 1'b0;
+			else	
+				q <= d;
+		end
+	endmodule
+
+**Simulation**:
+
+![Screenshot from 2023-08-10 06-32-32](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/77e5a2d7-40e6-43bc-acd4-1921968864e0)
+
+**Synthesized circuit**:
+
+![Screenshot from 2023-08-10 06-37-44](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/def48f40-9d42-4a2f-9689-daca09709d9b)
+
+**d-flipflop with synchronous and asynchronbous reset**- Here the output **q** goes low whenever asynchronous reset is high where output doesn't depend on clock and also when synchronous reset is high and posedge of clock occurs.
+
+![telegram-cloud-photo-size-5-6314223892675276906-y](https://user-images.githubusercontent.com/110079648/183970239-3f159d5c-5802-43df-849a-0d6d2daa901a.jpg)
+
+	module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+		always @ (posedge clk , posedge async_reset)
+		begin
+			if(async_reset)
+				q <= 1'b0;
+			else if (sync_reset)
+				q <= 1'b0;
+			else	
+				q <= d;
+		end
+	endmodule
+
+**Simulation**:
+
+![Screenshot from 2023-08-10 06-41-19](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/dfa4dde4-3b87-4a32-91de-569894974dde)
+
+**Synthesized circuit**:
+
+![Screenshot from 2023-08-10 06-43-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/b9cb8141-1f48-4d44-94f9-d981fee6f407)
+
+</details>
+
+<details>
+<summary> Interesting optimisations </summary>
+
+This lab session deals with some automatic and interesting optimisations of the circuits based on logic. In the below example, multiplying a number with 2 doesn't need any additional hardeware and only needs connecting the bits from **a** to **y** and grounding the LSB bit of y is enough and the same is realized by Yosys.
+
+	module mul2 (input [2:0] a, output [3:0] y);
+		assign y = a * 2;
+	endmodule
+
+![telegram-cloud-photo-size-5-6314223892675276908-y](https://user-images.githubusercontent.com/110079648/183971707-8f04b9d0-2ef9-4160-ad44-12981cc97add.jpg)
+
+**Synthesized circuit**:
+
 
  
 </details>
