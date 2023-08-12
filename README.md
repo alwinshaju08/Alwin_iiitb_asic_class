@@ -1426,12 +1426,15 @@ Here for loop is used to design a 4:1 mux. This can also be written using case o
 
 **Simulation**
 
+![Screenshot from 2023-08-12 17-15-00](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/509d585f-0142-463b-9e9f-dee440a8fcf2)
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 17-17-18](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ce8cac47-8075-4ebe-9de6-1189e79df692)
 
 **Netlist Simulation**
 
+![Screenshot from 2023-08-12 17-21-01](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/21fd3d48-a031-4237-ae5f-c8bc70cd58aa)
 
 **Example-2-Demux using Case**
 
@@ -1457,12 +1460,15 @@ Here for loop is used to design a 4:1 mux. This can also be written using case o
 
 **Simulation**
 
+![Screenshot from 2023-08-12 17-22-38](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ed70a9cf-918d-4c57-a508-c199514a2358)
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 17-24-07](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/bffd1eb9-4e8e-41ed-969e-da890de6e0e0)
 
 **Netlist Simulation**
 
+![Screenshot from 2023-08-12 17-32-38](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e8f91030-b3b4-470a-a7a1-c55eb348bb29)
 
 **Example-3-Demux using Generate**
 
@@ -1484,11 +1490,15 @@ The code in above example is big and also there is a chance of human error wile 
 
 **Simulation**
 
+![Screenshot from 2023-08-12 17-33-59](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/608e3311-b492-4d0d-b7af-b87515da69ae)
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 17-35-15](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/2cd50eb7-861e-49a4-8c39-8fe2042adc5b)
 
 **Netlist Simulation**
+
+![Screenshot from 2023-08-12 17-36-22](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c0cb9fe3-6bf4-4eb8-9293-fc26aec6004b)
 
 **Example-4- Ripple carry adder using fulladder**
 
@@ -1517,8 +1527,10 @@ In this Ripple carry adder example, unlike instantiating fulladder for 8 times, 
 
 **Simulation**
 
+![Screenshot from 2023-08-12 17-42-53](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ee7872b7-3fe7-4cd6-a6fd-1b2c27da8ee4)
 
 **Synthesis**
+
 
 
 **Netlist Simulation**
