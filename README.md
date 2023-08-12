@@ -1065,7 +1065,7 @@ Blocking statements execute the statemetns in the order they are written inside 
 <details>
 	<summary> Lab- GLS Synth Sim Mismatch </summary>
 
- **Example-1**
+ **Example-1** There is no mismatch in this example as the netlist simulation and rtl simulation waveform are similar only
 
 	module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 		assign y = sel?i1:i0;
@@ -1097,6 +1097,73 @@ Blocking statements execute the statemetns in the order they are written inside 
 
 **Simulation**
 
+![Screenshot from 2023-08-12 05-35-53](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f1897682-f9e1-499a-99b8-95492ff3bea2)
+
+**Synthesis**
+
+![Screenshot from 2023-08-12 05-38-57](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d83f1d1f-47a4-46a7-9e09-7f444a8cd2ed)
+
+**Netlist Simulation**
+
+![Screenshot from 2023-08-12 05-40-37](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f42fee9c-21a4-46c4-a9ba-b5f57312e96d)
+
+**MISMATCH**<br /> Here first pic shows the netlist simulation which corrects the bad_mux design which was only changing waveform when sel was triggered while for a mux to work properly it should be sensitivity to all the input signals
+
+
+![WhatsApp Image 2023-08-12 at 5 52 52 AM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/b1a4f8e2-3e59-4385-8943-058c7714b3da)
+
+**Example-3**
+
+	module good_mux (input i0 , input i1 , input sel , output reg y);
+		always @ (*)
+		begin
+			if(sel)
+				y <= i1;
+			else 
+				y <= i0;
+		end
+	endmodule
+	
+**Simulation**
+
+
+
+**Synthesis**
+
+
+
+**Netlist Simulation**
+
+
+</details>
+
+<details>
+	<summary>Lab- Synthesis simulation mismatch blocking statement</summary>
+
+ Here the output is depending on the past value of x which is dependednt on a and b and it appears like a flop.
+
+# Example4
+
+	module blocking_caveat (input a , input b , input  c, output reg d); 
+	reg x;
+	always @ (*)
+		begin
+		d = x & c;
+		x = a | b;
+	end
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Netlist Simulation**
+
+
+
+**MISMATCH**
 
 
 </details>
