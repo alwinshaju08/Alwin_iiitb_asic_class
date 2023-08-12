@@ -11,7 +11,7 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 - [Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)
 
-- [Day-5- if, case, for loop and for generate](#6-Day-5--if-case-for-loop-and-for-generate)
+- [Day-5-if, case, for loop and for generate](#6-Day-5-if-case-for-loop-and-for-generate)
 
 - [Word of Thanks](#Word-of-Thanks)
 
