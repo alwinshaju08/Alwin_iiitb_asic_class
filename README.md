@@ -1531,11 +1531,13 @@ In this Ripple carry adder example, unlike instantiating fulladder for 8 times, 
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 17-56-54](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5ca69c7a-f6b4-4243-9675-5a858bbae07c)
 
+![Screenshot from 2023-08-12 17-57-15](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d64d3189-252b-4e34-b5ab-5f8b04573fbb)
 
 **Netlist Simulation**
 
-
+![Screenshot from 2023-08-12 17-58-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/00ea0d62-bf07-491b-832c-8b7e14f52f03)
  
 </details>
 
