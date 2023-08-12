@@ -1166,7 +1166,12 @@ Blocking statements execute the statemetns in the order they are written inside 
 
 ![Screenshot from 2023-08-12 06-11-09](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/cccf31dd-40e4-46bd-a15f-4abecb763ed9)
 
-**MISMATCH** Here first pic show the netlist simulation which shows the proper working of the dut while the last pic shows the improper working of dut as we have used blocking statement here which causes synthesis simulation mismatch which is sorted out by GLS while providing netlist simulation  
+**MISMATCH** 
+
+![WhatsApp Image 2023-08-12 at 6 23 55 AM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/cc04e484-5040-4150-b204-a928642cb8ab)
+
+Here this how the circuit should behave but this correct waveform is only obtained while doing netlist simulation.
+Here first pic show the netlist simulation which shows the proper working of the dut while the last pic shows the improper working of dut as we have used blocking statement here which causes synthesis simulation mismatch which is sorted out by GLS while providing netlist simulation  
 
 ![WhatsApp Image 2023-08-12 at 6 18 55 AM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/b22ac58b-7d1b-4e68-a587-ba03f256264d)
 
