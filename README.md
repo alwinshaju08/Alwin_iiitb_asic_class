@@ -1177,6 +1177,10 @@ Here first pic show the netlist simulation which shows the proper working of the
 
 </details>
 
+
+## Word of Thanks
+I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to complete this flow smoothly.
+
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
 - Skywater Foundry
@@ -1194,3 +1198,4 @@ Here first pic show the netlist simulation which shows the proper working of the
 - https://github.com/The-OpenROAD-Project/OpenSTA.git
 - https://github.com/kunalg123
 - https://www.vsdiat.com
+- https://www.collagemaker.com
