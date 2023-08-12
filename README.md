@@ -9,7 +9,7 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day-3-Combinational and sequential optmizations](#day-3-Combinational-and-sequential-optmizations)
 
-[Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)]
+[Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)
 
 [Day-5]
 
