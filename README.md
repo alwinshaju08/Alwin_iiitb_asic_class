@@ -11,7 +11,7 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)
 
-[Day-5]
+[Day-5- if, case, for loop and for generate](#6-Day-5--if-case-for-loop-and-for-generate)]
 
 [Word of Thanks](#Word-of-Thanks)
 
@@ -1178,6 +1178,33 @@ Here first pic show the netlist simulation which shows the proper working of the
 
 </details>
 
+## Day-5- if, case, for loop and for generate
+
+<details>
+<summary> If and Case constructs </summary>
+ 
+</details>
+
+
+<details>
+<summary> Lab- Incomplete IF </summary>
+ 
+</details>
+
+<details>
+<summary> Lab- incomplete overlapping Case </summary>
+ 
+</details>
+
+<details>
+<summary> For Loop and For Generate </summary>
+ 
+</details>
+
+<details>
+<summary> Lab- For and For Generate </summary>
+ 
+</details>
 
 ## Word of Thanks
 I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to complete this flow smoothly.
