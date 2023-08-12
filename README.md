@@ -9,6 +9,9 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 [Day-3-Combinational and sequential optmizations](#day-3-Combinational-and-sequential-optmizations)
 
+[Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)]
+
+
 [Acknowledgement](#acknowledgement)
 
 [Reference](#reference)
@@ -1020,7 +1023,84 @@ All the other blocks in synthesizer are for incrementing the counter but the out
 ![Screenshot from 2023-08-10 17-27-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5e8879d9-ea18-4b8d-94ef-2984f9faf9a2)
  
 </details>
- 
+
+
+## Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+<details> 
+<summary>GLS, Synthesis-Simulation mismatch and Blocking, Non-blocking statements</summary>
+
+### GLS Concepts And Flow Using Iverilog
+
+**What is GLS- Gate Level Simulation?**:<br />
+GLS is generating the simulation output by running test bench with netlist file generated from synthesis as design under test. Netlist is logically same as RTL code, therefore, same test bench can be used for it.
+
+**Why GLS?**:<br />
+We perform this to verify logical correctness of the design after synthesizing it. Also ensuring the timing of the design is met.
+
+Below picture gives an insight of the procedure. Here while using iverilog, we also include gate level verilog models to generate GLS simulation.
+
+![Screenshot (49)](https://user-images.githubusercontent.com/104454253/166256679-1ac9167a-1358-4c60-bbdb-0f6423f0faa3.png)
+
+### Synthesis Simulation Mismatch
+
+There are three main reasons for Synthesis Simulation Mismatch:<br />
+- Missing sensitivity list in always block
+- Blocking vs Non-Blocking Assignments
+- Non standard Verilog coding
+
+**Missing sensitivity list in always block:**<br />
+
+If the consider - Example-2, we can see the only **sel** is mentioned in the sensitivity list. During the simulation, the waveforms will resemble a latched output but the simulation of netlist will not infer this as the synthesizer will only look at the statements with in the procedural block and not the sensitivity list.
+
+As the synthesizer doen't look for sensitivity list and it looks only for the statements in procedural block, it infers correct  circuit  and if we simulate the netlist code, there will be a synthesis simulation mismatch.
+
+To avoid the synthesis and simulation mismatch. It is very important to check the behaviour of the circuit first and then match it with the expected output seen in simulation and make sure there are no synthesis and simulation mismatches. This is why we use GLS.
+
+**Blocking vs Non-Blocking Assignments**:
+
+Blocking statements execute the statemetns in the order they are written inside the always block. Non-Blocking statements execute all the RHS and once always block is entered, the values are assigned to LHS. This will give mismatch as sometimes, improper use of blocking statements can create latches. Get to see at Example4
+
+</details>
+
+<details>
+	<summary> Lab- GLS Synth Sim Mismatch </summary>
+
+ **Example-1**
+
+	module ternary_operator_mux (input i0 , input i1 , input sel , output y);
+		assign y = sel?i1:i0;
+	endmodule
+	
+**Simulation**
+
+![Screenshot from 2023-08-12 05-18-39](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/35d1205f-9aa5-4043-ab08-f039e7af0ce1)
+
+**Synthesis**
+
+![Screenshot from 2023-08-12 05-21-59](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/7c678233-6303-483b-a9e1-d8e0135c87c3)
+
+**Netlist Simulation**
+
+![Screenshot from 2023-08-12 05-25-36](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ae119fbc-ed04-460f-9d12-26da345c55e8)
+
+# Example-2
+
+	module bad_mux (input i0 , input i1 , input sel , output reg y);
+		always @ (sel)
+		begin
+			if(sel)
+				y <= i1;
+			else 
+				y <= i0;
+		end
+	endmodule
+
+**Simulation**
+
+
+
+</details>
+
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
 - Skywater Foundry
