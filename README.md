@@ -1,21 +1,21 @@
 # Alwin_iiitb_asic_class
 This github repository summarizes the progress made in the ASIC class. Quick links:
 
-[Day-0-Installation](#day-0-Installation)
+- [Day-0-Installation](#day-0-Installation)
 
-[Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
+- [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
-[Day-2-Timing libs,hierarchical,flat synthesis,efficient flop coding styles](#Day-2-Timing-libs-hierarchical-flat-synthesis-efficient-flop-coding-styles)
+- [Day-2-Timing libs,hierarchical,flat synthesis,efficient flop coding styles](#Day-2-Timing-libs-hierarchical-flat-synthesis-efficient-flop-coding-styles)
 
-[Day-3-Combinational and sequential optmizations](#day-3-Combinational-and-sequential-optmizations)
+- [Day-3-Combinational and sequential optmizations](#day-3-Combinational-and-sequential-optmizations)
 
-[Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)
+- [Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#5-DAY4--GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)
 
-[Day-5- if, case, for loop and for generate](#6-Day-5--if-case-for-loop-and-for-generate)]
+- [Day-5- if, case, for loop and for generate](#6-Day-5--if-case-for-loop-and-for-generate)
 
-[Word of Thanks](#Word-of-Thanks)
+- [Word of Thanks](#Word-of-Thanks)
 
-[Reference](#reference)
+- [Reference](#reference)
 
 ## Day-0-Installation
 <details>
