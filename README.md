@@ -1182,27 +1182,339 @@ Here first pic show the netlist simulation which shows the proper working of the
 
 <details>
 <summary> If and Case constructs </summary>
+	
+ ### 6.1.1 If construct
  
-</details>
+The construct **if** is mainly used to create priority logic. In a nested if else construct, the conditions are given priority from top to bottom. Only if the condition is satisfied, if statement is executed and the compiler comes out of the block. If condition fails, it checks for next condition and so on as shown below.
 
+**Syntax for nested if else**
+
+	if (<condition 1>)
+	begin
+	-----------
+	-----------
+	end
+	else if (<condition 2>)
+	begin
+	-----------
+	-----------
+	end
+	else if (<condition 3>)
+	.
+	.
+	.
+	
+**Dangers with IF**:
+
+If use a bad coding style i.e, using incomplete if else constructs will infer a latch. We definetly don't require an unwanted latch in a combinational circuit.
+When an incomplete construct is used, if all the conditions are failed, the input is latched to the output and hence we don't get desired output unless we need a latch.
+
+This can be shown in below example:
+
+![WhatsApp Image 2023-08-12 at 4 18 43 PM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/945687cf-2a00-4838-98df-94e52ff0d303)
+
+### Case construct
+
+**Syntax**
+
+	case(statement)
+	  case1: begin
+  	       --------
+		 --------
+		 end
+ 	 case2: begin
+    	     --------
+		 --------
+		 end
+ 	 default:
+	 endcase
+ 
+ In case construct, the execution checks for all the case statements and whichever satisfies the statement, that particular statement is executed.If there is no match, the default statement is executed. But here unlike if construct, the execution doesn't stop once statement is satisfied, but it continues further.
+ 
+**Caveats in Case**<br />
+Caveats in case occur due to two reasons. One is **incomplete case statements** and the other is **partial assignments in case statements.**
+
+</details>
 
 <details>
 <summary> Lab- Incomplete IF </summary>
+
+This incomplete if construct forms a connection between i0 and output y i.e, D-latch with input as i1 and i0 will be the enable for it.<br />
+**Example-1**
+
+	module incomp_if (input i0 , input i1 , input i2 , output reg y);
+	always @ (*)
+	begin
+		if(i0)
+			y <= i1;
+	end
+	endmodule
+
+**Simulation**
+
+![Screenshot from 2023-08-12 16-30-30](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/8283800a-196d-46fd-9d07-8688a16621b4)
+
+**Synthesis**
+
+![Screenshot from 2023-08-12 16-33-34](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/09ecc29f-143c-4077-b289-0dafb52394eb)
+
+**Example-2**<br />
+The below code is equivalent to two 2:1 mux with i0 and i2 as select lines with i1 and i3 as inputs respectively. Here as well, the output is connected back to input in the form of a latch with an enable input of **OR** of i0 and i2.
+
+	module incomp_if2 (input i0 , input i1 , input i2 , input i3, output reg y);
+		always @ (*)
+		begin
+			if(i0)
+				y <= i1;
+			else if (i2)
+				y <= i3;
+		end
+	endmodule
+
+**Simulation**
+
+![Screenshot from 2023-08-12 16-35-18](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e0bc98aa-09c5-4a9b-9cea-dbe350024759)
+
+**Synthesis**
+
+![Screenshot from 2023-08-12 16-36-57](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c21e5477-7a74-43f1-9d94-bc2e123a3cc2)
  
 </details>
 
 <details>
 <summary> Lab- incomplete overlapping Case </summary>
+
+**Example-1**<br />
+Thie is an example of incomplete case where other two combinations 10 and 11 were not included. This is infer a latch for the multiplexer and connect i2 and i3 with the output.
+
+	module incomp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+		always @ (*)
+		begin
+		case(sel)
+			2'b00 : y = i0;
+			2'b01 : y = i1;
+		endcase
+		end
+	endmodule
+
+**Simulator**
+
+
+**Synthesis**
+
+
+**Example-2- Complete case**
+
+This is the case of complete case statements as the default case is given. If the actual case statements don't execute, the compiler directly executes the default statements and a latch is not inferred.
+
+	module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+	always @ (*)
+	begin
+		case(sel)
+			2'b00 : y = i0;
+			2'b01 : y = i1;
+			default : y = i2;
+		endcase
+	end
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Example-3**<br />
+In the below example, y is present in all the case statements and it had particular outut for all cases. There no latch is inferred in case of y. 
+When it comes to x, it is not assigned for the input 01, therefore a latch is inferred here.
+
+	module partial_case_assign (input i0 , input i1 , input i2 , input [1:0] sel, output reg y , output reg x);
+	always @ (*)
+	begin
+		case(sel)
+			2'b00 : begin
+				y = i0;
+				x = i2;
+				end
+			2'b01 : y = i1;
+			default : begin
+		         	  x = i1;
+				  y = i2;
+			 	 end
+		endcase
+	end
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Example-4-Bad case construct**
+
+	module bad_case (input i0 , input i1, input i2, input i3 , input [1:0] sel, output reg y);
+	always @(*)
+	begin
+		case(sel)
+			2'b00: y = i0;
+			2'b01: y = i1;
+			2'b10: y = i2;
+			2'b1?: y = i3;
+			//2'b11: y = i3;
+		endcase
+	end
+	endmodule
+	
+**Simulation**
+
+
+**Synthesis**
+
+
+**Netlist simulation**
+
+
  
 </details>
 
 <details>
 <summary> For Loop and For Generate </summary>
+
+**For Loop**<br />
+- For look is used in always block
+- It is used for excecuting expressions alone
+
+**Generate For loop**<br />
+- Generate for loop is used for instantaing hardware
+- It should be used only outside always block
+
+For loop can be used to generate larger circuits like 256:1 multiplexer or 1-256 demultiplexer where the coding style of smaller mux is not feesible and can have human errors since we would need to include huge number of combinations.
+
+FOR Generate can be used to instantiate any number of sub modules with in a top module. For example, if we need a 32 bit ripple carry adder, instead of instantiating 32 full adders, we can write a generate for loop and connect the full adders appropriately.
+
  
 </details>
 
 <details>
 <summary> Lab- For and For Generate </summary>
+
+**Example-1- Mux using generate**<br />
+Here for loop is used to design a 4:1 mux. This can also be written using case or if else block, however, for a large size mux, only for loop model is feasible.
+
+	module mux_for (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
+		wire [3:0] i_int;
+		assign i_int = {i3,i2,i1,i0};
+		integer k;
+	always @ (*)
+		begin
+		for(k = 0; k < 4; k=k+1) begin
+			if(k == sel)
+			y = i_int[k];
+			end
+		end
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Netlist Simulation**
+
+
+**Example-2-Demux using Case**
+
+	module demux_case (output o0 , output o1, output o2 , output o3, output o4, output o5, output o6 , output o7 , input [2:0] sel  , input i);
+	reg [7:0]y_int;
+	assign {o7,o6,o5,o4,o3,o2,o1,o0} = y_int;
+	integer k;
+	always @ (*)
+	begin
+	y_int = 8'b0;
+	case(sel)
+		3'b000 : y_int[0] = i;
+		3'b001 : y_int[1] = i;
+		3'b010 : y_int[2] = i;
+		3'b011 : y_int[3] = i;
+		3'b100 : y_int[4] = i;
+		3'b101 : y_int[5] = i;
+		3'b110 : y_int[6] = i;
+		3'b111 : y_int[7] = i;
+	endcase
+	end
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Netlist Simulation**
+
+
+**Example-3-Demux using Generate**
+
+The code in above example is big and also there is a chance of human error wile writing the code. However, using for loop as shown below, this drawback can be elimiated to a great extent.
+
+	module demux_generate (output o0 , output o1, output o2 , output o3, output o4, output o5, output o6 , output o7 , input [2:0] sel  , input i);
+	reg [7:0]y_int;
+	assign {o7,o6,o5,o4,o3,o2,o1,o0} = y_int;
+	integer k;
+	always @ (*)
+	begin
+		y_int = 8'b0;
+		for(k = 0; k < 8; k++) begin
+			if(k == sel)
+			y_int[k] = i;
+		end
+	end
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Netlist Simulation**
+
+**Example-4- Ripple carry adder using fulladder**
+
+In this Ripple carry adder example, unlike instantiating fulladder for 8 times, generate for loop is used to instantiate the fulladder for 7 times and only for first full adder, it is instantiated seperately. Using the same code, just by changing bus sizes and condition of for loop, we can design any required size of ripple carry adder.
+
+	module rca (input [7:0] num1 , input [7:0] num2 , output [8:0] sum);
+	wire [7:0] int_sum;
+	wire [7:0]int_co;
+
+	genvar i;
+	generate
+		for (i = 1 ; i < 8; i=i+1) begin
+			fa u_fa_1 (.a(num1[i]),.b(num2[i]),.c(int_co[i-1]),.co(int_co[i]),.sum(int_sum[i]));
+		end
+
+	endgenerate
+	fa u_fa_0 (.a(num1[0]),.b(num2[0]),.c(1'b0),.co(int_co[0]),.sum(int_sum[0]));
+
+
+	assign sum[7:0] = int_sum;
+	assign sum[8] = int_co[7];
+	endmodule
+
+	module fa (input a , input b , input c, output co , output sum);
+	endmodule
+
+**Simulation**
+
+
+**Synthesis**
+
+
+**Netlist Simulation**
+
+
  
 </details>
 
