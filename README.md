@@ -1126,14 +1126,15 @@ Blocking statements execute the statemetns in the order they are written inside 
 	
 **Simulation**
 
-
+![Screenshot from 2023-08-12 05-59-35](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d3d005c0-f1a3-40f8-b9da-00b412dc6b21)
 
 **Synthesis**
 
-
+![Screenshot from 2023-08-12 06-00-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/8c6a6b9e-32e0-4b19-a2a2-1247a654937a)
 
 **Netlist Simulation**
 
+![Screenshot from 2023-08-12 06-02-20](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c9f87f13-427c-4924-98f4-d2dbac8a14a4)
 
 </details>
 
