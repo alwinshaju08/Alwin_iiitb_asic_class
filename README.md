@@ -1411,7 +1411,7 @@ FOR Generate can be used to instantiate any number of sub modules with in a top 
 **Example-1- Mux using generate**<br />
 Here for loop is used to design a 4:1 mux. This can also be written using case or if else block, however, for a large size mux, only for loop model is feasible.
 
-	module mux_for (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
+	module mux_generate (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
 		wire [3:0] i_int;
 		assign i_int = {i3,i2,i1,i0};
 		integer k;
@@ -1430,11 +1430,11 @@ Here for loop is used to design a 4:1 mux. This can also be written using case o
 
 **Synthesis**
 
-![Screenshot from 2023-08-12 17-17-18](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ce8cac47-8075-4ebe-9de6-1189e79df692)
+![Screenshot from 2023-08-12 18-09-27](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/9ac06b1f-bcdd-4e8f-b7bc-309dc0480d39)
 
 **Netlist Simulation**
 
-![Screenshot from 2023-08-12 17-21-01](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/21fd3d48-a031-4237-ae5f-c8bc70cd58aa)
+![Screenshot from 2023-08-12 18-10-29](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e9c86d8b-63ab-4ec8-8155-101c88c7a4d4)
 
 **Example-2-Demux using Case**
 
@@ -1464,11 +1464,11 @@ Here for loop is used to design a 4:1 mux. This can also be written using case o
 
 **Synthesis**
 
-![Screenshot from 2023-08-12 17-24-07](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/bffd1eb9-4e8e-41ed-969e-da890de6e0e0)
+![Screenshot from 2023-08-12 18-05-19](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/b8206f75-d0d2-4c77-8cce-e423bbc23c32)
 
 **Netlist Simulation**
 
-![Screenshot from 2023-08-12 17-32-38](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e8f91030-b3b4-470a-a7a1-c55eb348bb29)
+![Screenshot from 2023-08-12 18-06-09](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/51d79542-5b6c-4392-99aa-a9ff6c1b01f3)
 
 **Example-3-Demux using Generate**
 
@@ -1494,11 +1494,11 @@ The code in above example is big and also there is a chance of human error wile 
 
 **Synthesis**
 
-![Screenshot from 2023-08-12 17-35-15](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/2cd50eb7-861e-49a4-8c39-8fe2042adc5b)
+![Screenshot from 2023-08-12 18-01-51](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/50f970dc-2366-496d-bd97-32b27f0b6ff5)
 
 **Netlist Simulation**
 
-![Screenshot from 2023-08-12 17-36-22](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c0cb9fe3-6bf4-4eb8-9293-fc26aec6004b)
+![Screenshot from 2023-08-12 18-03-44](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/43d9a809-3d62-4564-8582-4fca22d6ee94)
 
 **Example-4- Ripple carry adder using fulladder**
 
