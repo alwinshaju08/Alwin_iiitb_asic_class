@@ -1299,9 +1299,12 @@ Thie is an example of incomplete case where other two combinations 10 and 11 wer
 
 **Simulator**
 
+![Screenshot from 2023-08-12 16-44-24](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/64b64b5f-bf32-4379-8c4a-28d69ae74344)
 
 **Synthesis**
 
+
+![Screenshot from 2023-08-12 16-45-30](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/504fd175-6a30-4366-86b3-b07c234eb516)
 
 **Example-2- Complete case**
 
@@ -1320,9 +1323,11 @@ This is the case of complete case statements as the default case is given. If th
 
 **Simulation**
 
+![Screenshot from 2023-08-12 16-47-12](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e3164978-62a6-43ab-86c7-aaeaaa716d93)
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 16-47-58](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/52223f30-f7a4-4307-a625-dcad2fcb6a6d)
 
 **Example-3**<br />
 In the below example, y is present in all the case statements and it had particular outut for all cases. There no latch is inferred in case of y. 
@@ -1347,9 +1352,11 @@ When it comes to x, it is not assigned for the input 01, therefore a latch is in
 
 **Simulation**
 
+![Screenshot from 2023-08-12 16-55-55](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/41a6f161-8f5f-4b0b-bce9-adacba988ec0)
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 16-57-27](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/595640ca-928e-490d-a637-2b310ea47f78)
 
 **Example-4-Bad case construct**
 
@@ -1368,13 +1375,15 @@ When it comes to x, it is not assigned for the input 01, therefore a latch is in
 	
 **Simulation**
 
+![Screenshot from 2023-08-12 16-59-05](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c64019ae-6937-498d-a48f-3530edcc4d46)
 
 **Synthesis**
 
+![Screenshot from 2023-08-12 17-00-09](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/17d30970-521c-4d9b-8ef4-26efc593c85b)
 
-**Netlist simulation**
+**Netlist simulation** As we can see from the simulation wave form and difference in netlist waveform here the invalid case is getting fixed by the tool which we should avoid to do so in the code
 
-
+![Screenshot from 2023-08-12 17-04-44](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/3783ebe3-a673-427f-bc72-152d6f992a49)
  
 </details>
 
