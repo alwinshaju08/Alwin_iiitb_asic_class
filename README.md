@@ -1561,4 +1561,3 @@ I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to com
 - https://github.com/The-OpenROAD-Project/OpenSTA.git
 - https://github.com/kunalg123
 - https://www.vsdiat.com
-- https://www.collagemaker.com
