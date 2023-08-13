@@ -823,7 +823,7 @@ Below are the various techniques used for sequential logic optimisations:<br />
   - Retiming
   - Sequential Logic Cloning (Floor Plan Aware Synthesis)
  
-#### 4.2.1 Basic
+#### Basic
 
 **Sequential contant propagation**- Here only the first logic can be optimized as the output of flop is always zero. However for the second flop, the output changes continuously, therefor it cannot be used for contant propagation.
 
@@ -1026,7 +1026,8 @@ All the other blocks in synthesizer are for incrementing the counter but the out
 </details>
 
 
-## Day-4-GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+## Day-4-GLS,blocking vs non-blocking and Synthesis-Simulation mismatch
+
 <details> 
 <summary>GLS, Synthesis-Simulation mismatch and Blocking, Non-blocking statements</summary>
 
