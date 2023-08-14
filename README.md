@@ -769,7 +769,20 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 
 ![Screenshot from 2023-08-10 15-39-24](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/a8016b15-cc64-42c7-91f0-69c3a4a85751)
 
- **Example- 5**
+ **Example- 5**:Here there is multiple modules present so we will try to check whether those module are being used or not by using following commands:
+
+```
+yosys:read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+yosys:read_verilog multiple_module_opt2.v
+yosys:synth -top multiple_module_opt2
+yosys:abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+yosys:flatten
+yosys:opt_clean -purge
+yosys:show
+
+```
+
+ 
 
 	module sub_module(input a , input b , output y);
 		assign y = a & b;
@@ -783,11 +796,13 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 		sub_module U4 (.a(n3), .b(n1) , .y(y));
 	endmodule
 
-**Before flatten**
+**Before Flatten**
 
 ![Screenshot from 2023-08-10 16-33-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f9e8f641-8927-4a5c-90be-eb8cc740d5df)
 
+**After Flatten**
 
+![Screenshot from 2023-08-14 03-29-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e16e8f44-2815-4bbf-9aa7-4f1b83dae702)
 
 **Example-6**
 
@@ -809,11 +824,11 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 		assign y = c | (b & n1); 
 		endmodule
 
-**Before flatten**
+**Before Flatten**
 
 ![Screenshot from 2023-08-10 16-34-39](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/7f74441f-9d3f-44c1-8946-dcf51018ba87)
 
-**After flatten**
+**After Flatten**
 
 ![Screenshot from 2023-08-14 03-22-41](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/42a74a39-0f92-4df5-81ca-7de25a2b40bb)
  
