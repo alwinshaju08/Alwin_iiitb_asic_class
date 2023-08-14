@@ -783,7 +783,13 @@ Command to optimize the circuit by yosys is **yosys> opt_clean -purge**
 		sub_module U4 (.a(n3), .b(n1) , .y(y));
 	endmodule
 
+**Before flatten**
+
 ![Screenshot from 2023-08-10 16-33-21](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/f9e8f641-8927-4a5c-90be-eb8cc740d5df)
+
+**After flatten**
+
+![Screenshot from 2023-08-14 03-22-41](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/42a74a39-0f92-4df5-81ca-7de25a2b40bb)
 
 **Example-6**
 
