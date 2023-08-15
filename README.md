@@ -1572,7 +1572,7 @@ I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to com
 ## Acknowledgement
 - Kunal Ghosh, VSD Corp. Pvt. Ltd.
 - Skywater Foundry
-- Chatgtp
+- Chatgpt
 - Kanish R,Colleague,IIIT B
 - DantuNandini,Senior,IIIT B
 - Mariam Rakka
