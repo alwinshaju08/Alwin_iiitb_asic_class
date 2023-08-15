@@ -1547,6 +1547,7 @@ In this Ripple carry adder example, unlike instantiating fulladder for 8 times, 
 	endmodule
 
 	module fa (input a , input b , input c, output co , output sum);
+ 	assign {co,sum} =a+b+c;
 	endmodule
 
 **Simulation**
