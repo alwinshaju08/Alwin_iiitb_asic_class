@@ -13,6 +13,8 @@ This github repository summarizes the progress made in the ASIC class. Quick lin
 
 - [Day-5-if, case, for loop and for generate](#6-Day-5-if-case-for-loop-and-for-generate)
 
+- [Day 6-Introduction to RISC-V ISA And GNU compiler toolchain ](#Day6--Introduction-to-RISC-V-ISA-And-GNU-compiler-toolchain)
+
 - [Word of Thanks](#Word-of-Thanks)
 
 - [Reference](#reference)
@@ -1564,6 +1566,26 @@ In this Ripple carry adder example, unlike instantiating fulladder for 8 times, 
 
 ![Screenshot from 2023-08-12 17-58-45](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/00ea0d62-bf07-491b-832c-8b7e14f52f03)
  
+</details>
+
+# Day 6-Introduction to RISC-V ISA And GNU compiler toolchain 
+
+<details>
+  <summary>Introduction to RISC-V ISA </summary>
+
+  RISC-V ISA is a base integer ISA and must be present in any implemenatation along with some optional extension. The RISC-V has been designed to support extensive customization and specialization which can be extended  with  one  or  more  optional  instruction-set  extensions,  but  the  base  integer instructions cannot be redefine. The different instructions included in RISC-V are listed below.
+
+1. Pseudo instructions
+2. Base integer instruction (RV64I, RV32I)
+3. Multiply extension (RV64M)
+4. Single and double floating point instruction (RV64F, RV64D)
+5. Application binary instruction
+6. Memory allocation and stack pointer
+
+The detail of the RISC-V instructions set manual can be found [here](https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf).
+
+Each base integer set is characterized by the  width  of the register (XLEN) and size of the user address space. The most important advantage of RISC-V is that it is an open standard instruction which is easily available for academics and commercial purposes free of cost.
+
 </details>
 
 ## Word of Thanks
