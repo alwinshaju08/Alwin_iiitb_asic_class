@@ -1619,7 +1619,7 @@ In case RISC-V GNU toolchain the follwing commands are executed
 - To use the RISC-V gcc compiler or simulator, type
   
 ```
-riscv64-unknown-elf-gcc <-01/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
+riscv64-unknown-elf-gcc <-O1/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
 
 ```
 Here -01 gives 15 instructions set while -0fast gives us 12 instructions set
