@@ -1601,7 +1601,7 @@ To start off a c program to compile sum from 1 to n was written whose  codes giv
 
 ```
 
-include <stdio.h>
+#include <stdio.h>
 
 int main () {
 	int i,sum = 0, n = 6;
