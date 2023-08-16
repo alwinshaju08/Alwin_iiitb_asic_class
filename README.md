@@ -1601,7 +1601,32 @@ To start off a c program to compile sum from 1 to n was written whose  codes giv
 
 ```
 
+include <stdio.h>
 
+int main () {
+	int i,sum = 0, n = 6;
+	for (i = 1; i <=n; ++i) {
+		sum += i;
+	}
+	printf("The sum of the number from 1 to %d is %d\n", n,sum);
+	return 0;
+	}
+
+```
+
+In case RISC-V GNU toolchain the follwing commands are executed
+
+- To use the RISC-V gcc compiler or simulator, type
+  
+```
+riscv64-unknown-elf-gcc <-01/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
+
+```
+- To deassemble the object file 
+
+```
+
+riscv64-unknown-elf-objdump <object file> -d <object filename.o>
 
 ```
 
