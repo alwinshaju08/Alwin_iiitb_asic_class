@@ -1589,7 +1589,21 @@ Each base integer set is characterized by the  width  of the register (XLEN) and
 </details>
 
 <details>
-  <summary>Introduction to RISC-V ISA </summary>
+  <summary>GNU compile toolchain</summary>
+
+  The GNU compile toolchain is a set of programming tools in LINUX system that can be use for compiling a code to generate certain executable program, library and debugger and whose detail can be found in [1](https://en.wikipedia.org/wiki/Toolchain) and [2](https://en.wikipedia.org/wiki/GNU_toolchain). RISC-V is one such toolchain which supports C and C++ cross compiler. It supports two build modes: a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc toolchain and [here](https://github.com/riscv/riscv-gnu-toolchain) the github link for the same can be found. 
+
+<!---1. Compiler and linker which transform the source code into an executable program
+2. Libraries which provide interfaces to the operating system 
+3. Debugger which is used to test and debug created program--->
+
+To start off a c program to compile sum from 1 to n was written whose  codes given below as [sum1to6.c]
+
+```
+
+
+
+```
 
   </details>
 
@@ -1615,4 +1629,6 @@ I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to com
 - https://www.vsdiat.com
 - https://github.com/mariamrakka
 - https://github.com/dantunandinidevi
-  
+- https://en.wikipedia.org/wiki/Toolchain
+- https://en.wikipedia.org/wiki/GNU_toolchain
+- https://github.com/riscv/riscv-gnu-toolchain
