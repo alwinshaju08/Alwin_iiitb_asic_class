@@ -1575,11 +1575,11 @@ In this Ripple carry adder example, unlike instantiating fulladder for 8 times, 
 
   RISC-V ISA is a base integer ISA and must be present in any implemenatation along with some optional extension. The RISC-V has been designed to support extensive customization and specialization which can be extended  with  one  or  more  optional  instruction-set  extensions,  but  the  base  integer instructions cannot be redefine. The different instructions included in RISC-V are listed below.
 
-1. Pseudo instructions
-2. Base integer instruction (RV64I, RV32I)
-3. Multiply extension (RV64M)
-4. Single and double floating point instruction (RV64F, RV64D)
-5. Application binary instruction
+1. Pseudo instructions - For e.g- mv,li,ret etc
+2. Base integer instruction (RV64I, RV32I)-For e.g-lui,addi etc
+3. Multiply extension (RV64M) -For e.g- mulw,divw etc
+4. Single and double floating point instruction (RV64F, RV64D) -For e.g- flw,fadd etc
+5. Application binary instruction 
 6. Memory allocation and stack pointer
 
 The detail of the RISC-V instructions set manual can be found [here](https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf).
@@ -1622,6 +1622,8 @@ In case RISC-V GNU toolchain the follwing commands are executed
 riscv64-unknown-elf-gcc <-01/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
 
 ```
+Here -01 gives 15 instructions set while -0fast gives us 12 instructions set
+
 - To deassemble the object file 
 
 ```
