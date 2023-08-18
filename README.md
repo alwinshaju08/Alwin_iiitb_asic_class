@@ -1708,11 +1708,21 @@ This code helps in seeing the main file:
 
 here we can check the instruction set is 15 by subtracting  10214-101ac = 58\4=15 instruction sets 
 
+** To compile:**
+
+```
+spike pk sum1ton.o
+```
+<img width="682" alt="Screenshot 2023-08-19 at 12 30 02 AM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/5bbd2c8d-65e2-4e03-b234-551ad411197f">
+
+** To debug using spike:**
+
+```
+spike -d pk sum1ton.o
+```
 After running the above code line a number of things can be done as demonstrated in the image below. The code can be manually debugged, part of it can be run and contents of registers can be checked.
 
 ```:q``` to quit. 
-
-
 
 
 
