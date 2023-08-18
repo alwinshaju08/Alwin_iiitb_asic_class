@@ -1770,6 +1770,8 @@ To find negative number: we find 2's complement
 Code for unsignedHighest:
 
 ```
+#include <stdio.h>
+#include <math.h>
 int main() {
 unsigned long long int max = (unsigned long long int) (pow(2,64) -1);
 printf("highest number represented by unsigned long long int is %llu\n", max);
