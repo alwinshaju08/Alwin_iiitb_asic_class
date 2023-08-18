@@ -1619,10 +1619,23 @@ In case RISC-V GNU toolchain the follwing commands are executed
 - To use the RISC-V gcc compiler or simulator, type
   
 ```
-riscv64-unknown-elf-gcc <-O1/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
+riscv64-unknown-elf-gcc  -o <object filename.o> <filename.c>
 
 ```
-Here -01 gives 15 instructions set while -0fast gives us 12 instructions set
+Here -01 gives 15 instructions set while -0fast gives us 12 instructions set(ubuntu) here in macos we get 15 instructions
+
+More generic command with different options:
+
+    `riscv64-unknown-elf-gcc <compiler option -O1 ; Ofast> <ABI specifier -lp64; -lp32; -ilp32> <architecture specifier -RV64 ; RV32> -o <object filename> <C      filename>`
+    
+-  To list the details of a file
+  
+  ```
+ls -ltr <filename.o>
+
+```
+
+<img width="682" alt="Screenshot 2023-08-18 at 11 33 19 PM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/c768b542-363a-4a6f-87b0-754f5d9a3484">
 
 - To deassemble the object file 
 
@@ -1631,6 +1644,30 @@ Here -01 gives 15 instructions set while -0fast gives us 12 instructions set
 riscv64-unknown-elf-objdump <object file> -d <object filename.o>
 
 ```
+
+- Below image shows the disassembled file `sum1to6.o` with `main` function highlighted.
+
+
+```
+
+riscv64-unknown-elf-objdump <object file> -d <object filename.o> | less
+
+```
+
+<img width="682" alt="Screenshot 2023-08-18 at 11 33 45 PM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/27322cef-c5db-4cbe-942f-4889623380cd">
+
+```
+/main
+n
+
+```
+This code helps in seeing the main file:
+
+<img width="1440" alt="Screenshot 2023-08-18 at 11 34 06 PM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/0ddce653-dfe2-4331-a82d-8b4ec1fc1d1f">
+
+here we can check the instruction set is 15 by subtracting  10214-101ac = 58\4=15 instruction sets 
+
+
 
   </details>
 
@@ -1659,3 +1696,4 @@ I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to com
 - https://en.wikipedia.org/wiki/Toolchain
 - https://en.wikipedia.org/wiki/GNU_toolchain
 - https://github.com/riscv/riscv-gnu-toolchain
+- https://github.com/KanishR1
