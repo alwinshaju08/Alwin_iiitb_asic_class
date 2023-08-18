@@ -1593,9 +1593,9 @@ Each base integer set is characterized by the  width  of the register (XLEN) and
 
   The GNU compile toolchain is a set of programming tools in LINUX system that can be use for compiling a code to generate certain executable program, library and debugger and whose detail can be found in references. RISC-V is one such toolchain which supports C and C++ cross compiler. It supports two build modes: a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc toolchain and the github link for the same can be found in references. 
 
-<!---1. Compiler and linker which transform the source code into an executable program
+1. Compiler and linker which transform the source code into an executable program
 2. Libraries which provide interfaces to the operating system 
-3. Debugger which is used to test and debug created program--->
+3. Debugger which is used to test and debug created program
 
 To start off a c program to compile sum from 1 to n was written whose  codes given below as [sum1to6.c]
 
@@ -1666,6 +1666,12 @@ This code helps in seeing the main file:
 <img width="1440" alt="Screenshot 2023-08-18 at 11 34 06 PM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/0ddce653-dfe2-4331-a82d-8b4ec1fc1d1f">
 
 here we can check the instruction set is 15 by subtracting  10214-101ac = 58\4=15 instruction sets 
+
+After running the above code line a number of things can be done as demonstrated in the image below. The code can be manually debugged, part of it can be run and contents of registers can be checked.
+
+```:q``` to quit. 
+
+
 
 
 
