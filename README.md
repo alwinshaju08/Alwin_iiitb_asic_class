@@ -1685,6 +1685,10 @@ I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to com
 - Skywater Foundry
 - Chatgpt
 - Kanish R,Colleague,IIIT B
+- Sumanto Kar,VSD Corp.
+- Pruthvi Parate,Colleague,IIIT B
+- Bhargav D V ,Colleague,IIIT B
+- Emil Jayanth Lal,Colleague,IIIT B
 - DantuNandini,Senior,IIIT B
 - Mariam Rakka
 - Nanditha Rao, Professor, IIITB 
