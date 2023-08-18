@@ -1724,8 +1724,6 @@ After running the above code line a number of things can be done as demonstrated
 
 ```:q``` to quit. 
 
-
-
   </details>
 
 ## Word of Thanks
