@@ -1726,6 +1726,120 @@ After running the above code line a number of things can be done as demonstrated
 
   </details>
 
+  <details>
+	  <summary>
+	  Number system in RiscV
+  </summary>
+The RISC-V architecture defines several different data types and number systems to represent and manipulate data. Here, I'll explain the basic number systems used in RISC-V:
+
+- Binary Number System: RISC-V, like most digital systems, primarily operates on binary data. In the binary number system, numbers are represented using only two symbols: 0 and 1. Each digit in a binary number represents a power of 2. For example, the binary number "1101" represents (1 * 2^3) + (1 * 2^2) + (0 * 2^1) + (1 * 2^0) = 13 in decimal.
+- Integer Representation: RISC-V supports different integer data types with varying sizes. The most common are 32-bit and 64-bit integers, denoted as "RV32" and "RV64" respectively. Integers are typically represented in two's complement form, which allows both positive and negative values to be stored and manipulated using the same hardware.
+- Floating-Point Representation: RISC-V also supports floating-point operations for real numbers. Floating-point numbers are represented using a sign bit, an exponent, and a fraction (also known as mantissa). RISC-V defines different formats for floating-point numbers, including the IEEE 754 standard formats (single precision, double precision, etc.). These formats allow a wide range of values to be represented with varying levels of precision.
+- Hexadecimal Notation: While binary is the fundamental representation in RISC-V, hexadecimal (base-16) notation is often used to represent binary numbers in a more human-readable form. Each hexadecimal digit represents four bits. For example, the binary number "11011010" can be represented as "DA" in hexadecimal.
+- Memory Addressing: RISC-V CPUs use memory addresses to access data stored in memory. Memory addresses are typically represented in hexadecimal form. The exact memory addressing scheme depends on the specific RISC-V implementation and the memory model being used.
+Overall, the RISC-V architecture provides a flexible framework for representing and manipulating different types of numbers, allowing software developers and hardware designers to efficiently perform arithmetic and logical operations on various data types within the context of RISC-V-based systems.
+
+In computer architecture, the terms "bit," "byte," "word," and "double word" refer to different units of data storage and manipulation. These terms are used to describe the size of data that a computer's memory and processing units can handle. The specific sizes of these units can vary based on the architecture and implementation, but I'll provide you with some common interpretations:
+
+- Bit: A bit is the smallest unit of data in computing. It can represent one of two values: 0 or 1. Bits are the building blocks of all digital information and are used to represent various types of data and instructions in a computer's memory and processing units.
+- Byte: A byte is a group of 8 bits. It is the basic addressable unit of memory storage in most computer architectures. Bytes are commonly used to represent characters, numbers, and other small data elements. For example, the ASCII code for the letter 'A' is 65, which can be represented as a byte with the binary value 01000001.
+- Word: The term "word" refers to the natural data size that a computer's central processing unit (CPU) can process in a single operation. The size of a word can vary between different computer architectures. In the context of x86 and x86-64 architectures, a word is typically 16 bits, while in other architectures like RISC-V, a word can be 32 bits or 64 bits. The size of a word determines the maximum amount of data that the CPU can manipulate at once, which can impact the efficiency of data processing.
+- Double Word (Dword): The term "double word" (often abbreviated as "dword") is used to describe a data unit that is twice the size of a standard word. In x86 and x86-64 architectures, a double word is 32 bits, while in some other architectures, it can refer to a 64-bit value. The term "dword" is often used in the x86 family of processors to describe a 32-bit data value.
+It's important to note that the exact sizes of these units can vary based on the computer architecture and implementation.
+**Total Number of pattern by RV64 will be 2^64**
+**RISC- doubleword can represent '0' to '(2^64 - 1)' unsigned numbers or positive numbers**
+
+  <img width="1440" alt="Screenshot 2023-08-19 at 2 15 56 AM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/44fcfeb1-56a6-4982-b172-864357dfe28d">
+
+## Signed Numbers
+To find negative number: we find 2's complement
+- First the normal binary of the +ve number 
+- Then we invert the number
+- Then we add +1 to it
+(-1,152,991,877,645,991,936)dec = (0001000000000000010000000000000100000000000000000000000000000000)bin
+				  (1110111111111111101111111111111011111111111111111111111111111111)bin
+											+1
+  				    (1110111111111111101111111111111100000000000000000000000000000000)bin
+
+
+  </details>
+  
+<details>
+<summary>Lab For Signed And Unsigned Numbers</summary>
+
+Code for unsignedHighest:
+
+```
+int main() {
+unsigned long long int max = (unsigned long long int) (pow(2,64) -1);
+printf("highest number represented by unsigned long long int is %llu\n", max);
+return 0;
+}
+
+```
+
+<img width="682" alt="Screenshot 2023-08-19 at 2 37 14 AM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/abfe12ba-f1e9-40c1-b3a3-1c267d73fcec">
+
+
+This show the Highest value for Unsigned Numbers
+if we tweak the code to get the lowest value for Unsigned Number by changing (pow(2,64) * -1);
+
+![Screenshot 2023-08-19 at 2 41 16 AM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/7e655ffe-1b19-40d5-a041-14108865fc2b)
+
+Code for signed Numbers:
+
+```
+#include <stdio.h>
+#include <math.h>
+int main(){
+long long int max = (long long int) (pow(2,10) * -1);
+printf("highest number represented by long long int is %lld\n", max);
+return 0;
+}
+
+```
+
+<img width="682" alt="Screenshot 2023-08-19 at 2 46 18 AM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/ecf3d7cf-ee06-4d48-a146-9a974c09660b">
+
+
+## Example no.1
+
+code:
+
+```
+#include <stdio.h>
+#include <math.h>
+int main() {
+long long int max = (int) (pow(2,63) -1);
+long long int min = (int) (pow(2,63) * -1);
+printf("highest number represented by long long int is %lld\n", max);
+printf("lowest number represented by long long int is %lld\n", min);
+return 0;
+
+```
+
+![Screenshot 2023-08-19 at 2 56 52 AM](https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/d881e7f5-2837-402c-a6e0-3df8a7336d8e)
+
+Here in this code we have to change :
+
+```
+long long int max = (long long int) (pow(2,63) -1);
+long long int min = (long long int) (pow(2,63) * -1);
+
+```
+so corrected output :
+
+<img width="682" alt="Screenshot 2023-08-19 at 3 06 23 AM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/fc038bb5-9e97-4c83-afaa-ba2e1aa22224">
+
+Table : 
+
+<img width="1440" alt="Screenshot 2023-08-19 at 2 59 33 AM" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/2769ceb4-e909-48f9-a051-d5b23163e190">
+
+
+</details>
+
+
+
 ## Word of Thanks
 I sciencerly thank **Mr. Kunal Gosh**(Founder/**VSD**) for helping me out to complete this flow smoothly.
 
